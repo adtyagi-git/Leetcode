@@ -4,11 +4,11 @@ private:
         if(k==0) return true;
         if(i==0) return k==nums[0];
         if(dp[i][k]!=-1) return dp[i][k];
-        int include=0;
+        bool include=false;
         if(nums[i]<=k){
             include=solve(i-1,k-nums[i],nums,dp);
         }
-        int exclude=solve(i-1,k,nums,dp);
+        bool exclude=solve(i-1,k,nums,dp);
         return dp[i][k]=include||exclude;
     }
 public:
