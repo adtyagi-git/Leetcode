@@ -1,8 +1,11 @@
 class Solution {
 public:
     int findGCD(vector<int>& nums) {
-        sort(nums.begin(),nums.end());
-        int a=nums[0],b=nums[nums.size()-1];
-        return gcd(a,b);
+        int mini=1e9,maxi=-1;
+        for(int i:nums){
+            mini=min(mini,i);
+            maxi=max(maxi,i);
+        }
+        return gcd(mini,maxi);
     }
 };
