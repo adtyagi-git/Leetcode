@@ -1,6 +1,5 @@
 class Solution {
 private:
-    const int mod=1e9+7;
     long long lis(string &s,string &t,int m,int n){
         vector<vector<unsigned long long>> dp(m+1,vector<unsigned long long>(n+1,0));
         for (int i=0;i<=m;i++)
